@@ -1,0 +1,71 @@
+.map{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .center{
+    text-align: center;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .icons{
+    cursor: pointer;
+    text-align: center;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contactform{
+    text-align: center;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .roundbtn{
+    border-radius:40px;
+  }
+
+  .opacImage{
+    background-image: url("../../../assets/images/contactUsFormImage.jpg");
+    opacity: 0.7;
+    width: 100%;
+  }
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    opacity: 0.0 !important;     /*click effect color change*/
+    background-color:rgb(255, 255, 255) transparent;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: white!important;   /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+   border-color:white!important; /*outer ring color change*/
+}
+
+  .form-group{
+    color: white;
+  }
+  md-radio-button.md-default-theme .md-on, md-radio-button .md-on {
+    background-color: rgb(67, 174, 86);
+  }
+  md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked .md-off {
+    border-color: rgb(67, 174, 86);
+  }
+
+
+  

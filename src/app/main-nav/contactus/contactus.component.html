@@ -1,3 +1,65 @@
-<p>
-  contactus works!
-</p>
+<h3 class ="center">
+  Local to the DFW area? We would love to meet you in person!
+</h3>
+
+<!-- <img class="map" src ="https://maps.googleapis.com/maps/api/staticmap?center=76137&zoom=14&size=900x200&key=AIzaSyB-aG1_k5ncu2mZevQRn8np1kF3d1CYPEI" allowfullscreen alt="Google Maps"> -->
+<iframe class="map" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=76137&key=AIzaSyB-aG1_k5ncu2mZevQRn8np1kF3d1CYPEI" allowfullscreen></iframe>
+<br />  
+<h3 class="center">
+  For a free consultation, please feel free to contact us using the form below or through social media.
+</h3>
+<br />
+
+<div class="icons">
+  <i class="fa fa-facebook-square fa-3x" style="padding-right:15px; padding-left:15px"></i>
+  <i class="fa fa-twitter-square fa-3x" style="padding-right:15px; padding-left:15px"></i>
+  <i class="fa fa-pinterest-square fa-3x" style="padding-right:15px; padding-left:15px"></i>
+  <i class="fa fa-linkedin-square fa-3x" style="padding-right:15px; padding-left:15px"></i>
+  <i class="fa fa-instagram fa-3x" style="padding-right:15px; padding-left:15px"></i>
+</div>
+<br />
+
+
+<mat-card style="text-align: center"><b>Email:</b> EPPS_Development@gmail.com</mat-card>
+<mat-card style="text-align: center"><b>Phone:</b> (682) 554-8023</mat-card>
+
+
+<div class="opacImage">
+  <form *ngIf="formSubmitted == false" class="contactform" [formGroup]="contactusForm">
+
+    <div class="form-group" >
+      <small id="emailHelp" style="color:white"><b>We'll never share your email with anyone else.</b></small>
+      <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Email Address">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" formControlName="firstName" placeholder="Fist Name">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" formControlName="lastName" placeholder="Last Name">
+    </div>
+
+    <div class="form-group">
+      <mat-radio-group  formControlName="phoneType"  [(ngModel)]="defaultPhone">
+        <mat-radio-button value="Mobile" [checked]="true">Mobile</mat-radio-button>
+        <mat-radio-button value="Home">Home</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" formControlName="phoneNumber" placeholder="Phone Number">
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-control" formControlName="description"  rows="5" placeholder="Description"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="border-radius:40px; margin-bottom: 10px;" (click)="submitClick()">Submit</button>
+    
+  </form>
+</div>
+
+<div class="alert alert-success" style="text-align: center; z-index: 1; " *ngIf="formSubmitted == true" role="alert">
+  <p>Thank you! We received details of your request and will be contacting you shortly!</p>
+</div>

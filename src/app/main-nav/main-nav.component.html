@@ -5,10 +5,10 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="pointer" (click)="HomeLogoClickHandler(); drawer.toggle()">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item (click)="AboutUsClickHandler()">About Us</a>
-      <a mat-list-item (click)="ContactUsClickHandler()">Contact Us</a>
+      <a mat-list-item (click)="AboutUsClickHandler(); drawer.toggle()">About Us</a>
+      <a mat-list-item (click)="ContactUsClickHandler(); drawer.toggle()">Contact Us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content >
@@ -21,11 +21,11 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span (click)="HomeLogoClickHandler()">Sub Par Web Development LLC</span>
+      <span class="pointer" (click)="HomeLogoClickHandler()">EPPS Web Development LLC</span>
       <!-- <span>Sub Par Web Development LLC</span> -->
-      <span class="stayright"></span>
-      <a *ngIf="!(isHandset$ | async)" (click)="AboutUsClickHandler()">About Us</a>
-      <a *ngIf="!(isHandset$ | async)" (click)="ContactUsClickHandler()">Contact Us</a>
+      <span class="stay-right"></span>
+      <p *ngIf="!(isHandset$ | async)" class="header-links" (click)="AboutUsClickHandler()">About Us</p>
+      <p *ngIf="!(isHandset$ | async)" class="header-links" (click)="ContactUsClickHandler()">Contact Us</p>
     </mat-toolbar>
 
     <img class="jumbotron" *ngIf="OnHomePage == true" src ="../../assets/images/MainImage.jpg" alt="Landing Image">
